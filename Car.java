@@ -35,14 +35,14 @@ public class Car extends Vehicle  {
     @Override
     public void startEngine() {
         if (Car.this.getCurrentFuelLevel() == 0){
-            System.out.println("Необходимо заправить бензин!");
+            System.out.println("Необходимо заправить топливо!");
         }
-        else{this.sEngine = true;}
+        else{sEngine = true;}
      }
 
     @Override
     public void stopEngine() {
-        if (this.speed == 0){this.sEngine = false;}
+        if (speed == 0){sEngine = false;}
             else{System.out.println("Необходимо остановиться!");}
     }
 
@@ -56,7 +56,7 @@ public class Car extends Vehicle  {
 
     @Override
     public void brake() {
-        this.speed = 0;
+        speed = 0;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Car extends Vehicle  {
     }
 
     void refuel(int liters){
-        if (Car.this.getFuelCapacity() < Car.this.getCurrentFuelLevel()){
+        if (Car.this.getFuelCapacity() >= Car.this.getCurrentFuelLevel()){
             Car.this.setCurrentFuelLevel(liters);
         }
     }
@@ -90,21 +90,21 @@ public class Car extends Vehicle  {
     }
 
     public void setCurrentFuelLevel(int currentFuelLevel) {
-        if (this.fuelCapacity >= (this.currentFuelLevel + currentFuelLevel)){
+        if (fuelCapacity >= (this.currentFuelLevel + currentFuelLevel)){
             this.currentFuelLevel += currentFuelLevel;
-            System.out.println("Заправлено " + currentFuelLevel + "л");
+            System.out.println("Заправлено " + currentFuelLevel);
         }
         else {
             System.out.println("Полный бак");
-            System.out.println("Заправлено " + (this.fuelCapacity - this.currentFuelLevel) + "л");
-            this.currentFuelLevel = this.fuelCapacity;
+            System.out.println("Заправлено " + (fuelCapacity - this.currentFuelLevel));
+            this.currentFuelLevel = fuelCapacity;
         }
     }
 
     public void setFuelCapacity(int fuelCapacity) {
         this.fuelCapacity = fuelCapacity;
-        if (  this.currentFuelLevel >= this.fuelCapacity){
-            this.currentFuelLevel = this.fuelCapacity;
+        if (currentFuelLevel >= this.fuelCapacity){
+            currentFuelLevel = this.fuelCapacity;
         }
     }
 
@@ -118,7 +118,7 @@ public class Car extends Vehicle  {
     public boolean issEngine() {
         return sEngine;
     }
-    
+
     public void setsEngine(boolean sEngine) {
         this.sEngine = sEngine;
     }
