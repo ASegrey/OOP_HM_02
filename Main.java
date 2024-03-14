@@ -66,6 +66,45 @@ package home_made_02;
 
 public class Main {
     public static void main(String[] args) {
+        Car mustang = new Car(777, "Ford", "Mustang", 2001, 100);
+        Aircraft su27 = new Aircraft(111, "Сухой", "СУ-27", 2000, 18000, 11975);
+        Boat hunter = new Boat(999, "Хантер", "Хатер 360", 2024, 5, 20);
+        mustang.displayInfo();
+        su27.displayInfo();
+        hunter.displayInfo();
+        mustang.setCurrentFuelLevel(110);
+        mustang.startEngine();
+        mustang.accelerate(100);
+        mustang.displayInfo();
+
+        mustang.brake();
+        mustang.stopEngine();
+        mustang.displayInfo();
+
+        su27.setCurrentFuelLevel(10000);
+        su27.startEngine();
+        su27.accelerate(500);
+        su27.takeOff();
+        su27.accelerate(1000);
+        su27.displayInfo(); 
+
+        su27.accelerate(700);
+        su27.land();
+        su27.brake();
+        su27.stopEngine();
+        su27.displayInfo();
+        
+        hunter.startEngine();
+        hunter.setCurrentFuelLevel(10);
+        hunter.startEngine();
+        hunter.startSwimming();
+        hunter.accelerate(100);
+        hunter.displayInfo();
+
+        hunter.brake();
+        hunter.stopSwimming();
+        hunter.stopEngine();
+        hunter.displayInfo();
 
     }
 }

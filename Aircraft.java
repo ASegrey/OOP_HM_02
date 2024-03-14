@@ -71,7 +71,7 @@ public class Aircraft extends Vehicle implements Flyable {
     @Override
     public void displayInfo() {
         System.out.println("Информация о самолёте:");
-        System.out.println("Номер " + Aircraft.this.getId() + " Марка " + Aircraft.this.getModel() + " Год выпуска" + Aircraft.this.getYear());
+        System.out.println("Номер " + Aircraft.this.getId()+ "; Производитель " + Aircraft.this.getBrand() + "; Марка " + Aircraft.this.getModel() + "; Год выпуска " + Aircraft.this.getYear());
         System.out.println("Информация о полете:");
         System.out.print("Двигатель ");
         if (sEngine){
@@ -81,12 +81,13 @@ public class Aircraft extends Vehicle implements Flyable {
                 System.out.println("в воздухе");
             }
             else {System.out.println("на земле");}
-            System.out.println("Скорость " + speed + " Топлива в баке " + currentFuelLevel + " Ёмкость бака" + fuelCapacity);
+            System.out.println("Скорость " + speed + "; Топлива в баке " + currentFuelLevel + "; Ёмкость бака " + fuelCapacity);
         }
         else{
             System.out.println("Остановлен");
-            System.out.println("Топлива в баке " + currentFuelLevel + " Ёмкость бака" + fuelCapacity);
+            System.out.println("Топлива в баке " + currentFuelLevel + "; Ёмкость бака " + fuelCapacity);
         }
+        System.out.println();
     }
     
     @Override

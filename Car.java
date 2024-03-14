@@ -62,17 +62,18 @@ public class Car extends Vehicle  {
     @Override
     public void displayInfo() {
         System.out.println("Информация о машине:");
-        System.out.println("Номер " + Car.this.getId() + " Марка " + Car.this.getModel() + " Год выпуска" + Car.this.getYear());
+        System.out.println("Номер " + Car.this.getId() + "; Производитель " + Car.this.getBrand() + "; Марка " + Car.this.getModel() + "; Год выпуска " + Car.this.getYear());
         System.out.println("Информация о движении:");
         System.out.print("Двигатель ");
         if (Car.this.issEngine()){
             System.out.println("запущен");
-            System.out.println("Скорость " + Car.this.getSpeed() + " Топлива в баке " + Car.this.getCurrentFuelLevel() + " Ёмкость бака" + Car.this.getFuelCapacity());
+            System.out.println("Скорость " + Car.this.getSpeed() + "; Топлива в баке " + Car.this.getCurrentFuelLevel() + "; Ёмкость бака " + Car.this.getFuelCapacity());
         }
         else{
             System.out.println("Остановлен");
-            System.out.println("Топлива в баке " + Car.this.getCurrentFuelLevel() + " Ёмкость бака" + Car.this.getFuelCapacity());
+            System.out.println("Топлива в баке " + Car.this.getCurrentFuelLevel() + "; Ёмкость бака " + Car.this.getFuelCapacity());
         }
+        System.out.println();
     }
 
     void refuel(int liters){
